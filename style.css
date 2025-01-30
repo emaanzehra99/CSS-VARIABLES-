@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Declaring a gobal variable. */
+:root {
+    --color: rgb(190, 31, 190);
+    --seccolor: rgb(207, 106, 207);
+    /* --thirdcolor: rgb(185, 144, 67); */
+    --fourthcolor: black;
+    --defpadding: 30px;
+    --defopacity: 0.9;
+}
+
+body {
+    background-color: rgb(199, 243, 156);
+}
+
+.nav-bar {
+    background-color: var(--color);
+    color: white;
+}
+
+ul {
+    display: flex;
+}
+
+ul li:first-child {
+    /* This is a local variable. */
+    --color: rgb(156, 190, 31);
+    background-color: var(--color);
+}
+
+ul {
+    --seccolor: rgb(49, 75, 190);
+    background-color: var(--seccolor);
+
+}
+
+ul li {
+    list-style: none;
+    padding: var(--defpadding);
+    opacity: var(--defopacity);
+}
+
+.container {
+    background-color: var(--seccolor);
+}
+
+.info {
+    /* Using a callback or alternate color since thirdcolor variable does not exists. */
+    background-color: var(--thirdcolor, rgb(55, 211, 55));
+    border: 4px solid var(--fourthcolor);
+}
